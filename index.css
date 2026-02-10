@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Green Palette - Growth & Peace */
+  --primary: 158 64% 52%; /* Emerald 500 equivalent approx */
+  --primary-foreground: 145 80% 10%;
+  
+  /* Gold Palette - Spiritual Value */
+  --accent: 43 96% 64%; /* Amber 400 */
+  --accent-foreground: 24 9.8% 10%;
+
+  /* Beige/Stone - Earthy Grounding */
+  --background: 40 23% 97%; /* Stone 50 */
+  --foreground: 24 9.8% 10%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 24 9.8% 10%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 9.8% 10%;
+  
+  --muted: 40 20% 94%;
+  --muted-foreground: 25 5.3% 44.7%;
+  
+  --secondary: 154 35% 93%;
+  --secondary-foreground: 154 50% 25%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+
+  --border: 40 15% 90%;
+  --input: 40 15% 90%;
+  --ring: 158 64% 52%;
+
+  --radius: 1rem;
+  
+  --font-sans: 'Tajawal', sans-serif;
+  --font-display: 'Amiri', serif;
+}
+
+.dark {
+  --background: 160 30% 8%; /* Deep green/black */
+  --foreground: 40 23% 97%;
+  
+  --card: 160 25% 10%;
+  --card-foreground: 40 23% 97%;
+  
+  --popover: 160 25% 10%;
+  --popover-foreground: 40 23% 97%;
+  
+  --primary: 158 64% 52%;
+  --primary-foreground: 145 80% 10%;
+  
+  --secondary: 160 20% 15%;
+  --secondary-foreground: 40 23% 97%;
+  
+  --muted: 160 20% 15%;
+  --muted-foreground: 160 10% 65%;
+  
+  --accent: 43 96% 64%;
+  --accent-foreground: 24 9.8% 10%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  
+  --border: 160 20% 18%;
+  --input: 160 20% 18%;
+  --ring: 158 64% 52%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+    direction: rtl; /* Force RTL for the entire app */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wide;
+  }
+}
+
+/* Islamic Pattern Background Utility */
+.bg-islamic-pattern {
+  background-color: hsl(var(--background));
+  background-image: radial-gradient(hsl(var(--primary)) 0.5px, transparent 0.5px), radial-gradient(hsl(var(--primary)) 0.5px, hsl(var(--background)) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 1;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
